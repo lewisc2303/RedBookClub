@@ -7,13 +7,12 @@ Each week, you should have attempted atleast a few of the exercises in the chapt
 
 Please fork this repository and use this repo to write your solutions to the exercises keeping the same project structure as the main repo.
 
-### Week 1 19/02/2020:
+### Week 1 - 19/02/2020:
 
-Discussed chapter 1: Referential Transparency and Function Purity
+- Discussed chapter 1: Referential Transparency and Function Purity.
+- Mobbed on the fibonacci sequence in TDD style.
 
-Mobbed on the fibonnaci sequence in TDD style.
-
-### Week 2 26/02/20:
+### Week 2 - 26/02/20:
 
 - Go through, read and complete exercises in Chapter 2 (HOFs).
 - In the next meet-up we will go through ones we found difficult and compare solutions.
