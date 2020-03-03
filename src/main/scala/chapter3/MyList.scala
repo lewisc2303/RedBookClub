@@ -148,21 +148,21 @@ object MyList {
     case (Cons(x, xs), Cons(y, ys)) => Cons(f(x,y), zipWith(xs, ys)(f))
   }
 
-  def createLists[A](list: MyList[A], n: Int): MyList[Int] = list match {
-    case Nil => Cons(0, Nil)
-    case Cons(_, tail) => Cons(n, createLists(tail, n - 1))
-  }
-
-  def hasSuqsequence[A](sup: MyList[A], sub: MyList[A]): MyList[MyList[A]] = {
-    val listLength = length(sup)
-
-    def loop[A](sup: MyList[A], n: Int, lists: MyList[MyList[A]]): MyList[MyList[A]] = sup match {
-      case _ if n == 0 => lists
-      case Nil => Nil
-      case Cons(_, xs) => loop(xs, n - 1, append(lists, map(reverse(createLists(sup, n)), (int: Int) =>  drop(sup, int))))
-    }
-    filter(loop(sup, listLength, Nil), (x: MyList[A]) => x == sub)
-  }
+//  def createLists[A](list: MyList[A], n: Int): MyList[Int] = list match {
+//    case Nil => Cons(0, Nil)
+//    case Cons(_, tail) => Cons(n, createLists(tail, n - 1))
+//  }
+//
+//  def hasSeqsequence[A](sup: MyList[A], sub: MyList[A]): MyList[MyList[A]] = {
+//    val listLength = length(sup)
+//
+//    def loop[A](sup: MyList[A], n: Int, lists: MyList[MyList[A]]): MyList[MyList[A]] = sup match {
+//      case _ if n == 0 => lists
+//      case Nil => Nil
+//      case Cons(_, xs) => loop(xs, n - 1, append(lists, map(reverse(createLists(sup, n)), (int: Int) =>  drop(sup, int))))
+//    }
+//    filter(loop(sup, listLength, Nil), (x: MyList[A]) => x == sub)
+//  }
 
 }
 
@@ -173,9 +173,8 @@ object main extends App {
 //
 //  println(flattenList(MyList(MyList(1,2,3), MyList(4,5,6))))
 
-  println(createLists(MyList(1,2,3,4), 4))
+  println(take(MyList(1,2,3,4), 3))
 
-  println(hasSuqsequence(MyList(1,2,3,4), MyList(1,2)))
 }
 
 
