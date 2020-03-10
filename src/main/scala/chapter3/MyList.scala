@@ -37,7 +37,7 @@ object MyList {
   def drop[A](list: MyList[A], n: Int): MyList[A] = list match {
     case Nil => Nil
     case list if n == 0 => list
-    case Cons(x, tail) => drop(tail, n - 1)
+    case Cons(_, tail) => drop(tail, n - 1)
   }
 
   def take[A](list: MyList[A], n: Int): MyList[A] = {
@@ -108,7 +108,7 @@ object MyList {
   def reverse[A](list: MyList[A]): MyList[A] = foldLeft(list, Nil: MyList[A])((acc, x) => Cons(x, acc))
 
   //implement append in terms of fold
-  def append2[A](list1: MyList[A], list2: MyList[A]): MyList[A] = ???
+//  def append2[A](list1: MyList[A], list2: MyList[A]): MyList[A] = foldLeft(list1, list2)
 
   //implement foldLeft in terms of foldRight
 
@@ -173,7 +173,7 @@ object main extends App {
 //
 //  println(flattenList(MyList(MyList(1,2,3), MyList(4,5,6))))
 
-  println(take(MyList(1,2,3,4), 3))
+  println(drop(MyList(1,2,3,4), 1))
 
 }
 

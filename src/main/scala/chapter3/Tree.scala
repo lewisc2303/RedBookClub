@@ -47,7 +47,7 @@ case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A] {
 
   private def foldLeft[B](tree: Tree[A])(f: A => B)(combine: (B,B) => B): B = tree match {
     case Leaf(a) => f(a)
-    case Branch(l, r) => combine(foldLeft(l)(f)( combine), foldLeft(l)(f)(combine))
+    case Branch(l, r) => combine(foldLeft(l)(f)( combine), foldLeft(r)(f)(combine))
   }
 
 }
